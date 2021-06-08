@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col cols="12">
-      <h3 class="mt-10">
+      <h3 class="mt-10 text-center text-dm-left">
         2. Given the attached CSV data file - rest_open_hours.csv a. Write a
         function that parses the data into a table b. Write a function that
         receives a date object native to your language of choice and uses a sql
@@ -12,10 +12,14 @@
     <v-col cols="12" class="text-center">
       <v-row>
         <v-col cols="6" class="text-md-right">
-          <v-btn class="white--text" @click="createTable()" color="green">Create table</v-btn>
+          <v-btn class="white--text" @click="createTable()" color="green"
+            >Create table</v-btn
+          >
         </v-col>
         <v-col cols="6" class="text-md-left">
-          <v-btn class="white--text" @click="dropTable()" color="red">Delete table</v-btn>
+          <v-btn class="white--text" @click="dropTable()" color="red"
+            >Delete table</v-btn
+          >
         </v-col>
       </v-row>
     </v-col>
@@ -42,12 +46,11 @@
           >
           </v-text-field>
         </v-col>
-        {{ weekDay }}
-        {{ selectedHour }}
       </v-row>
     </v-col>
     <v-col cols="12">
       <v-data-table
+        :loading="loadingTabe"
         :headers="headers"
         :items="restaurants"
         :items-per-page="5"
@@ -63,8 +66,8 @@ export default {
   data() {
     return {
       weekDay: null,
-      selectedDate: null,
-      selectedHour: null,
+      selectedDate: moment().format("yyyy-MM-DD"),
+      selectedHour: moment().format("HH:mm"),
       minDate: moment().format("yyyy-MM-DD"),
       days: [
         { day: "Monday", value: 0 },
@@ -84,6 +87,7 @@ export default {
         { text: "OpenTo", value: "hourFrom" },
         { text: "CloseTo", value: "hourTo" },
       ],
+      loadingTabe: false,
     };
   },
   computed: {
@@ -103,12 +107,14 @@ export default {
     },
     async getData() {
       if (this.selectedHour && this.selectedDate) {
+        this.loadingTabe = true;
         this.getWeekDay();
         let obj = {
           day: this.weekDay,
           hour: this.selectedHour + ":00",
         };
         await this.getDataRestaurants(obj);
+        this.loadingTabe = false;
       } else {
         this.SET_RESTAURANTS([]);
       }
