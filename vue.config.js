@@ -7,7 +7,7 @@ module.exports = {
         pathRewrite: { "^/exercise1": "" },
       },
       "/exercise2": {
-        target: "http://localhost:3000",
+        target: "https://server-interview-node.herokuapp.com/",
         pathRewrite: { "^/exercise2": "" },
       },
     },
