@@ -24,9 +24,9 @@
                   <h3 class="px-5 teal--text text--lighten-3">Antonio Tenllado Humanes</h3>
                   <p class="text-caption mt-1">tenlla2@gmail.com</p>
                   <v-divider class="my-3"></v-divider>
-                  <p><a href="">Linkedin</a></p>
+                  <p><a href="https://www.linkedin.com/in/antonio-tenllado-humanes-924a33208">Linkedin</a></p>
                   <v-divider class="my-3"></v-divider>
-                  <p><a href="">Github</a></p>
+                  <p><a href="https://github.com/tenlla2">Github</a></p>
                 </div>
               </v-list-item-content>
             </v-card>
