@@ -25,7 +25,7 @@ export default new Vuex.Store({
     async getDataApi({ commit }) {
       try {
         await axios
-          .get(url+"get?foo1=bar1&amp;foo2=bar2")
+          .get(url + "get?foo1=bar1&amp;foo2=bar2")
           .then((response) => {
             commit("SET_DATA_API", response.data);
           })
@@ -39,9 +39,9 @@ export default new Vuex.Store({
     async createTable() {
       try {
         await axios
-          .get(url2+"createTable")
+          .get(url2 + "createTable")
           .then((response) => {
-            console.log(response);
+            Vue.toasted.success(response.data);
           })
           .catch((err) => {
             console.log(err);
@@ -53,9 +53,9 @@ export default new Vuex.Store({
     async dropTable() {
       try {
         await axios
-          .get(url2+"dropTable")
+          .get(url2 + "dropTable")
           .then((response) => {
-            console.log(response);
+            Vue.toasted.success(response.data);
           })
           .catch((err) => {
             console.log(err);
@@ -67,7 +67,7 @@ export default new Vuex.Store({
     async getDataRestaurants({ commit }, obj) {
       try {
         await axios
-          .post(url2+"getRestaurants", obj)
+          .post(url2 + "getRestaurants", obj)
           .then((response) => {
             commit("SET_RESTAURANTS", response.data);
             console.log(response);

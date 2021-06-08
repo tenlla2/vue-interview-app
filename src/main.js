@@ -4,6 +4,15 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import Toasted from 'vue-toasted';
+ 
+// you can also pass options, check options reference below
+Vue.use(Toasted, {
+  duration: 2500,
+  keepOnHover: true,
+  singleton: true
+})
+ 
 
 Vue.config.productionTip = false
 
