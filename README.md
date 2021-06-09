@@ -1,4 +1,5 @@
 # Front-End project
+*launch it in root directory*
 
 ## Project setup
 ```
