@@ -11,20 +11,29 @@
       </h3>
     </v-col>
     <v-col cols="12" class="mt-10 px-12">
-      <p class="p-5" style="word-wrap: break-word;">
+      <p class="p-5" style="word-wrap: break-word">
+        <skeleton-component v-if="!dataApi" :loading="loading" />
         {{ dataApi }}
       </p>
     </v-col>
   </v-row>
 </template>
 <script>
+import SkeletonComponent from "./SkeletonComponent.vue";
 import { mapActions, mapState } from "vuex";
 export default {
   data() {
-    return {};
+    return {
+      loading: false,
+    };
+  },
+  components: {
+    SkeletonComponent,
   },
   async created() {
+    this.loading = true;
     await this.getDataApi();
+    this.loading = false;
   },
   methods: {
     ...mapActions(["getDataApi"]),

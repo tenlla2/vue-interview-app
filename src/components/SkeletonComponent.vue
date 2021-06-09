@@ -1,0 +1,29 @@
+<template>
+  <div>
+    <v-skeleton-loader
+      :loading="loading"
+      class="mx-auto"
+      type="text"
+    ></v-skeleton-loader>
+    <v-skeleton-loader
+      :loading="loading"
+      class="mx-auto"
+      type="text"
+    ></v-skeleton-loader>
+    <v-skeleton-loader
+      :loading="loading"
+      class="mx-auto"
+      type="text"
+    ></v-skeleton-loader>
+    <v-skeleton-loader
+      :loading="loading"
+      class="mx-auto"
+      type="text"
+    ></v-skeleton-loader>
+  </div>
+</template>
+<script>
+export default {
+  props: ["loading"],
+};
+</script>
