@@ -4,7 +4,7 @@
       <v-container>
         <v-row justify="center">
           <v-col cols="6" lg="4" class="text-right">
-            <router-link to="/"
+            <router-link class="not-stile" to="/"
               ><v-btn
                 block
                 color="teal lighten-3 white--text"
@@ -17,7 +17,7 @@
             >
           </v-col>
           <v-col cols="6" lg="4" class="text-center">
-            <router-link to="/first-exercise"
+            <router-link class="not-stile" to="/first-exercise"
               ><v-btn
                 block
                 color="teal lighten-3 white--text"
@@ -29,7 +29,7 @@
               </v-btn></router-link
             > </v-col
           ><v-col cols="6" lg="4" class="text-left">
-            <router-link to="/second-exercise"
+            <router-link class="not-stile" to="/second-exercise"
               ><v-btn
                 block
                 color="teal lighten-3 white--text"
@@ -58,3 +58,8 @@ export default {
   }),
 };
 </script>
+<style scoped>
+.not-stile{
+  text-decoration: none !important;
+}
+</style>
