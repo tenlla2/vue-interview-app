@@ -55,7 +55,7 @@ export default new Vuex.Store({
         await axios
           .get(url2 + "dropTable")
           .then((response) => {
-            Vue.toasted.success(response.data);
+            Vue.toasted.error(response.data);
           })
           .catch((err) => {
             console.log(err);
