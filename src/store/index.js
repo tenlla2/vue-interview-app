@@ -3,7 +3,6 @@ import Vuex from "vuex";
 import axios from "axios";
 const url = process.env.VUE_APP_API_URL;
 const url2 = process.env.VUE_APP_API_URL2;
-axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
