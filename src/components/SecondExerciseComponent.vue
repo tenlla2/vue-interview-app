@@ -18,7 +18,7 @@
         </v-col>
         <v-col cols="6" class="text-md-left">
           <v-btn class="white--text" @click="dropTable()" color="red"
-            >Delete table</v-btn
+            >Drop table</v-btn
           >
         </v-col>
       </v-row>
@@ -89,6 +89,9 @@ export default {
       ],
       loadingTabe: false,
     };
+  },
+  async mounted() {
+    await this.getData();
   },
   computed: {
     ...mapState(["restaurants"]),
