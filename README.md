@@ -1,4 +1,4 @@
-# tds-project
+# Front-End project
 
 ## Project setup
 ```
