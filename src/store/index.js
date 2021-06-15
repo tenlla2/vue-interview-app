@@ -49,12 +49,13 @@ export default new Vuex.Store({
         console.log(err);
       }
     },
-    async dropTable() {
+    async dropTable({commit}) {
       try {
         await axios
           .get(url2 + "dropTable")
           .then((response) => {
             Vue.toasted.error(response.data);
+            commit("SET_RESTAURANTS", []);
           })
           .catch((err) => {
             console.log(err);
